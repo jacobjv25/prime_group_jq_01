@@ -10,15 +10,16 @@ var orangeAvg = [];
 var bananaAvg = [];
 var grapeAvg = [];
 
-
 $(function (){
   console.log('Document is ready');
 
   setTimeout (storeIsClosed, 10000);
 
-  window.setInterval(function(){
-    setTimeout(timesUp,15000)
-  }, 15000);
+var timer = null;
+
+timer = window.setInterval(function(){
+    setTimeout(timesUp,5000)
+  }, 5000);
 
   var apple = new fruitPrice ('apple', 5.00);
   var orange = new fruitPrice ('orange', 5.00);
@@ -185,6 +186,8 @@ $('#sellGrape').on('click', function() {
 })
 
 function storeIsClosed() {
+
+    clearInterval(timer);
 
     var appleProfit = (appleTotal * apple.marketPrice);
     appleTotal = 0;
