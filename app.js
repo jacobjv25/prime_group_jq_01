@@ -149,6 +149,38 @@ $(function (){
       $('#grapeAvgPrice').append(grapeAverage.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
     }
   })
+$('#sellApple').on('click', function() {
+  appleTotal--;
+  $('#appleInventory').empty();
+  $('#appleInventory').append(appleTotal);
+  availableCash = (availableCash + apple.marketPrice);
+  $('#userAvailableCash').empty();
+  $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+})
+$('#sellOrange').on('click', function() {
+  orangeTotal--;
+  $('#orangeInventory').empty();
+  $('#orangeInventory').append(orangeTotal);
+  availableCash = (availableCash + orange.marketPrice);
+  $('#userAvailableCash').empty();
+  $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+})
+$('#sellBanana').on('click', function() {
+  bananaTotal--;
+  $('#bananaInventory').empty();
+  $('#bananaInventory').append(bananaTotal);
+  availableCash = (availableCash + banana.marketPrice);
+  $('#userAvailableCash').empty();
+  $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+})
+$('#sellGrape').on('click', function() {
+  grapeTotal--;
+  $('#grapeInventory').empty();
+  $('#grapeInventory').append(grapeTotal);
+  availableCash = (availableCash + grape.marketPrice);
+  $('#userAvailableCash').empty();
+  $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+})
 
 });
 
