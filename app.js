@@ -14,6 +14,8 @@ var grapeAvg = [];
 $(function (){
   console.log('Document is ready');
 
+  setTimeout (storeIsClosed, 10000);
+
   window.setInterval(function(){
     setTimeout(timesUp,15000)
   }, 15000);
@@ -182,7 +184,46 @@ $('#sellGrape').on('click', function() {
   $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
 })
 
+function storeIsClosed() {
+
+    var appleProfit = (appleTotal * apple.marketPrice);
+    appleTotal = 0;
+    $('#appleInventory').empty();
+    $('#appleInventory').append(appleTotal);
+    availableCash = (availableCash + appleProfit);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+
+    var orangeProfit = (orangeTotal * orange.marketPrice);
+    orangeTotal = 0;
+    $('#orangeInventory').empty();
+    $('#orangeInventory').append(orangeTotal);
+    availableCash = (availableCash + orangeProfit);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+
+    var bananaProfit = (bananaTotal * banana.marketPrice);
+    bananaTotal = 0;
+    $('#bananaInventory').empty();
+    $('#bananaInventory').append(bananaTotal);
+    availableCash = (availableCash + bananaProfit);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+
+    var grapeProfit = (grapeTotal * grape.marketPrice);
+    grapeTotal = 0;
+    $('#grapeInventory').empty();
+    $('#grapeInventory').append(grapeTotal);
+    availableCash = (availableCash + grapeProfit);
+    $('#userAvailableCash').empty();
+    $('#userAvailableCash').append(availableCash.toLocaleString("en-US", {style: 'currency', currency: 'USD'}));
+
+
+}
+
 });
+
+
 
 function randomNumber(min, max){
   return Math.floor(Math.random() * (1 + max - min) + min);
